@@ -1,22 +1,37 @@
 package com.login.entity;
 
+import java.time.LocalDate;
+
 public class User {
     private  Integer id;
     private  String  account;
     private  String password;
     private  String nickname;
     private  String avatar;
+    private  String address;
+    private LocalDate joinDate;
 
-    public User(Integer id, String account, String password, String nickname, String avatar) {
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", address='" + address + '\'' +
+                ", joinDate=" + joinDate +
+                '}';
+    }
+
+    public User(Integer id, String account, String password, String nickname, String avatar, String address, LocalDate joinDate) {
         this.id = id;
         this.account = account;
         this.password = password;
         this.nickname = nickname;
         this.avatar = avatar;
-    }
-
-    public User() {
-
+        this.address = address;
+        this.joinDate = joinDate;
     }
 
     public Integer getId() {
@@ -59,14 +74,19 @@ public class User {
         this.avatar = avatar;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", account='" + account + '\'' +
-                ", password='" + password + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", avatar='" + avatar + '\'' +
-                '}';
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public LocalDate getJoinDate() {
+        return joinDate;
+    }
+
+    public void setJoinDate(LocalDate joinDate) {
+        this.joinDate = joinDate;
     }
 }
