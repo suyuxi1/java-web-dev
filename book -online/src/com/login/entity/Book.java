@@ -12,12 +12,15 @@ public class Book {
     private String name;
     private String cover;
     private String author;
+    private String introduce;
 
-    public Book(Integer id, String name, String cover, String author) {
+
+    public Book(Integer id, String name, String cover, String author, String introduce) {
         this.id = id;
         this.name = name;
         this.cover = cover;
         this.author = author;
+        this.introduce = introduce;
     }
 
     public Integer getId() {
@@ -50,5 +53,13 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getIntroduce() {
+        return introduce;
+    }
+
+    public void setIntroduce(String introduce) {
+        this.introduce = introduce;
     }
 }
